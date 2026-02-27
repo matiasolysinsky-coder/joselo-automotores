@@ -119,10 +119,10 @@ export default function Hero() {
       </div>
 
       <div className="fixed bottom-8 right-8 z-50 flex flex-col gap-3">
-        <a href="https://wa.me/5491112345678" target="_blank" rel="noopener noreferrer" className="w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg shadow-green-500/30 transition-all duration-300 hover:scale-110">
+        <a href="https://wa.me/5493624406228" target="_blank" rel="noopener noreferrer" className="w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg shadow-green-500/30 transition-all duration-300 hover:scale-110">
           <MessageCircle className="w-6 h-6 text-white" />
         </a>
-        <a href="tel:+541112345678" className="w-14 h-14 bg-amber-500 hover:bg-amber-600 rounded-full flex items-center justify-center shadow-lg shadow-amber-500/30 transition-all duration-300 hover:scale-110">
+        <a href="tel:+5493624406228" className="w-14 h-14 bg-amber-500 hover:bg-amber-600 rounded-full flex items-center justify-center shadow-lg shadow-amber-500/30 transition-all duration-300 hover:scale-110">
           <Phone className="w-6 h-6 text-black" />
         </a>
       </div>

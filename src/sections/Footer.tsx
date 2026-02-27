@@ -1,4 +1,4 @@
-import { Car, Instagram, Facebook, Linkedin, Youtube, ArrowUp } from 'lucide-react';
+import { Instagram, Facebook, Linkedin, Youtube, ArrowUp } from 'lucide-react';
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -28,13 +28,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-yellow-600 rounded-xl flex items-center justify-center">
-                <Car className="w-6 h-6 text-black" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-white">Joselo Automotores</h3>
-                <p className="text-white/50 text-sm">Pasion por los autos desde 2009</p>
-              </div>
+              <img src="/logo-joselo.png" alt="Joselo Automotores" className="h-12 w-auto object-contain" />
             </div>
             <p className="text-white/60 max-w-md mb-6 leading-relaxed">
               En Joselo Automotores nos dedicamos a ofrecer los mejores vehiculos con la mas alta calidad y servicio personalizado. Tu satisfaccion es nuestra prioridad.
@@ -64,7 +58,7 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-6">Contacto</h4>
             <ul className="space-y-4">
-              <li><a href="tel:+541112345678" className="text-white/60 hover:text-amber-400 transition-colors">+54 11 1234-5678</a></li>
+              <li><a href="tel:+5493624406228" className="text-white/60 hover:text-amber-400 transition-colors">+54 9 3624 406228</a></li>
               <li><a href="mailto:info@joseloautomotores.com" className="text-white/60 hover:text-amber-400 transition-colors">info@joseloautomotores.com</a></li>
               <li className="text-white/60"><p className="font-medium text-white/80">Sucursal Centro</p>Av. Corrientes 1234, CABA</li>
               <li className="text-white/60"><p className="font-medium text-white/80">Sucursal Norte</p>Av. del Libertador 5678, Vicente Lopez</li>

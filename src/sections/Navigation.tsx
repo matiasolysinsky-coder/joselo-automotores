@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Car, Phone } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const navLinks = [
@@ -49,10 +49,7 @@ export default function Navigation() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             <a href="#inicio" onClick={(e) => { e.preventDefault(); scrollToSection('#inicio'); }} className="flex items-center gap-3 group">
-              <div className="w-10 h-10 bg-gradient-to-br from-amber-500 to-yellow-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-                <Car className="w-5 h-5 text-black" />
-              </div>
-              <span className="font-bold text-lg text-white">Joselo Automotores</span>
+              <img src="/logo-joselo.png" alt="Joselo Automotores" className="h-10 w-auto object-contain" />
             </a>
 
             <div className="hidden lg:flex items-center gap-1">
@@ -66,9 +63,9 @@ export default function Navigation() {
             </div>
 
             <div className="hidden lg:flex items-center gap-3">
-              <a href="tel:+541112345678" className="flex items-center gap-2 text-white/70 hover:text-white transition-colors">
+              <a href="tel:+5493624406228" className="flex items-center gap-2 text-white/70 hover:text-white transition-colors">
                 <Phone className="w-4 h-4" />
-                <span className="text-sm">+54 11 1234-5678</span>
+                <span className="text-sm">+54 9 3624 406228</span>
               </a>
               <Button onClick={() => scrollToSection('#catalogo')} className="bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-600 hover:to-yellow-700 text-black font-semibold px-6">
                 Ver catalogo
@@ -93,9 +90,9 @@ export default function Navigation() {
               </a>
             ))}
             <div className="pt-4 border-t border-white/10 space-y-3">
-              <a href="tel:+541112345678" className="flex items-center gap-3 px-4 py-3 text-white/70">
+              <a href="tel:+5493624406228" className="flex items-center gap-3 px-4 py-3 text-white/70">
                 <Phone className="w-5 h-5 text-amber-500" />
-                +54 11 1234-5678
+                +54 9 3624 406228
               </a>
               <Button onClick={() => scrollToSection('#catalogo')} className="w-full bg-gradient-to-r from-amber-500 to-yellow-600 text-black font-semibold py-6">
                 Ver catalogo

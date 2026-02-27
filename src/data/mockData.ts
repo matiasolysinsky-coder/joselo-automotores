@@ -18,9 +18,22 @@ export const mockVehicles: Vehicle[] = [
     color: 'Blanco Perlado',
     doors: 4,
     seats: 5,
-    description: 'El Toyota Corolla 2024 representa la excelencia en diseño, tecnología y eficiencia.',
-    features: ['Sistema Toyota Safety Sense 3.0', 'Pantalla táctil de 10.5"', 'Apple CarPlay y Android Auto'],
-    images: ['https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=800'],
+    description: 'El Toyota Corolla 2024 representa la excelencia en diseño, tecnología y eficiencia. Con su motor Dynamic Force de 2.0L, ofrece un rendimiento excepcional y bajo consumo de combustible.',
+    features: [
+      'Sistema Toyota Safety Sense 3.0',
+      'Pantalla táctil de 10.5"',
+      'Apple CarPlay y Android Auto',
+      'Cámara de reversa 360°',
+      'Asientos de cuero',
+      'Climatizador dual',
+      'Frenos de disco ABS',
+      'Control de crucero adaptativo'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=800',
+      'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800',
+      'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800'
+    ],
     mainImage: 'https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=800',
     stock: 3,
     status: 'disponible',
@@ -29,7 +42,211 @@ export const mockVehicles: Vehicle[] = [
     createdAt: new Date(),
     updatedAt: new Date()
   },
-  // Agregá más vehículos acá...
+  {
+    id: '2',
+    brand: 'Ford',
+    model: 'Ranger',
+    year: 2024,
+    price: 48500000,
+    currency: 'ARS',
+    category: 'pickup',
+    condition: 'nuevo',
+    mileage: 0,
+    fuelType: 'diesel',
+    transmission: 'automatico',
+    engine: '3.0L V6 Power Stroke',
+    power: '250 HP',
+    color: 'Azul Eléctrico',
+    doors: 4,
+    seats: 5,
+    description: 'La Ford Ranger 2024 es la pickup más capaz de su categoría. Con su potente motor V6 Power Stroke y capacidad todoterreno, está lista para cualquier desafío.',
+    features: [
+      'Tracción 4x4 inteligente',
+      'Capacidad de remolque: 3.5 toneladas',
+      'SYNC 4 con pantalla de 12"',
+      'Asistente de remolque',
+      'Modos de conducción todoterreno',
+      'Cámara de reversa con guías',
+      'Sensores de estacionamiento',
+      'Control de descenso en pendientes'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1551830820-330a71b99659?w=800',
+      'https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=800',
+      'https://images.unsplash.com/photo-1605893478675-8e4e7c7f5c8e?w=800'
+    ],
+    mainImage: 'https://images.unsplash.com/photo-1551830820-330a71b99659?w=800',
+    stock: 2,
+    status: 'disponible',
+    branchId: '1',
+    sellerId: '2',
+    createdAt: new Date(),
+    updatedAt: new Date()
+  },
+  {
+    id: '3',
+    brand: 'BMW',
+    model: 'X5',
+    year: 2023,
+    price: 125000000,
+    currency: 'ARS',
+    category: 'suv',
+    condition: 'usado',
+    mileage: 15000,
+    fuelType: 'nafta',
+    transmission: 'automatico',
+    engine: '3.0L TwinPower Turbo',
+    power: '335 HP',
+    color: 'Negro Zafiro',
+    doors: 5,
+    seats: 7,
+    description: 'BMW X5 2023 en excelente estado. SUV de lujo con tecnología de punta y rendimiento excepcional. Mantenimiento al día en concesionario oficial.',
+    features: [
+      'Paquete M Sport',
+      'Pantalla curva de 14.9"',
+      'Sistema de sonido Harman Kardon',
+      'Techo panorámico',
+      'Asientos deportivos de cuero',
+      'Suspensión adaptativa',
+      'Head-up display',
+      'Asistente de conducción profesional'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1555215695-3004980adade?w=800',
+      'https://images.unsplash.com/photo-1607853202273-797f1c22a38e?w=800',
+      'https://images.unsplash.com/photo-1606220838315-056192d5e927?w=800'
+    ],
+    mainImage: 'https://images.unsplash.com/photo-1555215695-3004980adade?w=800',
+    stock: 1,
+    status: 'disponible',
+    branchId: '2',
+    sellerId: '3',
+    createdAt: new Date(),
+    updatedAt: new Date()
+  },
+  {
+    id: '4',
+    brand: 'Honda',
+    model: 'CR-V',
+    year: 2024,
+    price: 52000000,
+    currency: 'ARS',
+    category: 'suv',
+    condition: 'nuevo',
+    mileage: 0,
+    fuelType: 'hibrido',
+    transmission: 'automatico',
+    engine: '2.0L i-MMD Hybrid',
+    power: '204 HP',
+    color: 'Gris Metálico',
+    doors: 5,
+    seats: 5,
+    description: 'La Honda CR-V Hybrid 2024 combina eficiencia y versatilidad. Su sistema híbrido ofrece un consumo excepcional sin sacrificar el rendimiento.',
+    features: [
+      'Sistema híbrido i-MMD de 2 motores',
+      'Honda Sensing',
+      'Pantalla táctil de 9"',
+      'Carga inalámbrica para celular',
+      'Portón eléctrico',
+      'Asientos heated',
+      'Sistema de audio de 8 bocinas',
+      'Conectividad HondaLink'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1606611013016-969c19ba27bb?w=800',
+      'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800',
+      'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800'
+    ],
+    mainImage: 'https://images.unsplash.com/photo-1606611013016-969c19ba27bb?w=800',
+    stock: 4,
+    status: 'disponible',
+    branchId: '1',
+    sellerId: '1',
+    createdAt: new Date(),
+    updatedAt: new Date()
+  },
+  {
+    id: '5',
+    brand: 'Chevrolet',
+    model: 'Camaro',
+    year: 2023,
+    price: 89500000,
+    currency: 'ARS',
+    category: 'deportivo',
+    condition: 'usado',
+    mileage: 8000,
+    fuelType: 'nafta',
+    transmission: 'manual',
+    engine: '6.2L V8 LT1',
+    power: '455 HP',
+    color: 'Rojo Rally',
+    doors: 2,
+    seats: 4,
+    description: 'Chevrolet Camaro SS 2023. Deportivo americano con motor V8 de 6.2L. Experiencia de conducción pura y emocionante.',
+    features: [
+      'Modo Track Performance',
+      'Diferencial de deslizamiento limitado',
+      'Frenos Brembo de alto rendimiento',
+      'Escape deportivo con válvulas',
+      'Asientos Recaro deportivos',
+      'Head-up display',
+      'Modos de conducción seleccionables',
+      'Sistema de sonido Bose'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800',
+      'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800',
+      'https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=800'
+    ],
+    mainImage: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800',
+    stock: 1,
+    status: 'disponible',
+    branchId: '2',
+    sellerId: '3',
+    createdAt: new Date(),
+    updatedAt: new Date()
+  },
+  {
+    id: '6',
+    brand: 'Volkswagen',
+    model: 'Amarok',
+    year: 2024,
+    price: 56500000,
+    currency: 'ARS',
+    category: 'pickup',
+    condition: 'nuevo',
+    mileage: 0,
+    fuelType: 'diesel',
+    transmission: 'automatico',
+    engine: '3.0L V6 TDI',
+    power: '258 HP',
+    color: 'Plata Tungsteno',
+    doors: 4,
+    seats: 5,
+    description: 'La nueva Volkswagen Amarok V6 2024. La pickup más sofisticada del mercado con tecnología alemana de punta.',
+    features: [
+      'Motor V6 TDI de 3.0L',
+      '4Motion tracción integral',
+      'Discover Pro de 12"',
+      'Asistente de estacionamiento',
+      'Cámara 360° Area View',
+      'Control de crucero adaptativo',
+      'Sistema de sonido premium',
+      'Modos de conducción off-road'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1605893478675-8e4e7c7f5c8e?w=800',
+      'https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=800',
+      'https://images.unsplash.com/photo-1551830820-330a71b99659?w=800'
+    ],
+    mainImage: 'https://images.unsplash.com/photo-1605893478675-8e4e7c7f5c8e?w=800',
+    stock: 3,
+    status: 'disponible',
+    branchId: '1',
+    sellerId: '2',
+    createdAt: new Date(),
+    updatedAt: new Date()
+  }
 ];
 
 export const mockBranches: Branch[] = [
@@ -43,7 +260,8 @@ export const mockBranches: Branch[] = [
     hours: 'Lun-Vie: 9:00-19:00 | Sáb: 10:00-14:00',
     latitude: -34.6037,
     longitude: -58.3816,
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800'
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800',
+    mapUrl: 'https://maps.app.goo.gl/punckdyrKRMpgna57?g_st=awb'
   },
   {
     id: '2',
@@ -55,7 +273,8 @@ export const mockBranches: Branch[] = [
     hours: 'Lun-Vie: 9:00-19:00 | Sáb: 10:00-14:00',
     latitude: -34.5248,
     longitude: -58.4833,
-    image: 'https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=800'
+    image: 'https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=800',
+    mapUrl: 'https://maps.app.goo.gl/jyqudVwk2b5vxjam6?g_st=awb'
   }
 ];
 
@@ -71,14 +290,38 @@ export const mockSellers: Seller[] = [
     branchId: '1',
     specialties: ['autos', 'suvs'],
     active: true
+  },
+  {
+    id: '2',
+    name: 'María',
+    lastName: 'González',
+    phone: '+54 11 4567-8901',
+    email: 'mgonzalez@joseloautomotores.com',
+    whatsapp: '+5491145678901',
+    photo: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400',
+    branchId: '1',
+    specialties: ['pickups', 'camionetas'],
+    active: true
+  },
+  {
+    id: '3',
+    name: 'Juan',
+    lastName: 'Pérez',
+    phone: '+54 11 5678-9012',
+    email: 'jperez@joseloautomotores.com',
+    whatsapp: '+5491156789012',
+    photo: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400',
+    branchId: '2',
+    specialties: ['deportivos', 'premium'],
+    active: true
   }
 ];
 
-export const brands = ['Toyota', 'Ford', 'BMW', 'Honda', 'Chevrolet', 'Volkswagen'];
+export const brands = ['Toyota', 'Ford', 'BMW', 'Honda', 'Chevrolet', 'Volkswagen', 'Audi', 'Mercedes-Benz', 'Nissan', 'Hyundai'];
 export const categories = [
-  { value: 'auto', label: 'Autos' },
-  { value: 'camioneta', label: 'Camionetas' },
-  { value: 'suv', label: 'SUVs' },
-  { value: 'deportivo', label: 'Deportivos' },
-  { value: 'pickup', label: 'Pickups' }
+  { value: 'auto', label: 'Autos', icon: 'Car' },
+  { value: 'camioneta', label: 'Camionetas', icon: 'Truck' },
+  { value: 'suv', label: 'SUVs', icon: 'SUV' },
+  { value: 'deportivo', label: 'Deportivos', icon: 'Zap' },
+  { value: 'pickup', label: 'Pickups', icon: 'Pickaxe' }
 ];

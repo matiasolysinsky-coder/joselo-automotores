@@ -1,9 +1,8 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { MapPin, Phone, Clock, Mail, Navigation } from 'lucide-react';
+import { MapPin, Phone, Clock, Mail, Navigation, ExternalLink } from 'lucide-react';
 import { useApp } from '@/context/AppContext';
-import type { Branch } from '@/types';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -43,16 +42,6 @@ export default function Branches() {
     };
   }, []);
 
-  const openMap = (branch: Branch) => {
-    const url = `https://www.google.com/maps?q=${branch.latitude},${branch.longitude}`;
-    window.open(url, '_blank');
-  };
-
-  const getDirections = (branch: Branch) => {
-    const url = `https://www.google.com/maps/dir/?api=1&destination=${branch.latitude},${branch.longitude}`;
-    window.open(url, '_blank');
-  };
-
   return (
     <section ref={sectionRef} id="sucursales" className="relative min-h-screen w-full bg-[#0a0a0a] py-24 lg:py-32 overflow-hidden">
       <div className="absolute inset-0">
@@ -78,9 +67,9 @@ export default function Branches() {
               <div className="relative aspect-[16/9] overflow-hidden">
                 <img src={branch.image} alt={branch.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
-                <button onClick={() => openMap(branch)} className="absolute top-4 right-4 w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-amber-500 transition-all duration-300 group/btn">
-                  <MapPin className="w-5 h-5 text-white group-hover/btn:text-black" />
-                </button>
+                <a href={branch.mapUrl} target="_blank" rel="noopener noreferrer" className="absolute top-4 right-4 w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-amber-500 transition-all duration-300 group/btn">
+                  <ExternalLink className="w-5 h-5 text-white group-hover/btn:text-black" />
+                </a>
                 <div className="absolute bottom-4 left-4 right-4">
                   <h3 className="text-2xl font-bold text-white mb-1">{branch.name}</h3>
                   <p className="text-white/70 flex items-center gap-2"><MapPin className="w-4 h-4 text-amber-500" />{branch.address}, {branch.city}</p>
@@ -105,13 +94,12 @@ export default function Branches() {
                 </div>
 
                 <div className="flex gap-3 pt-2">
-                  <button onClick={() => getDirections(branch)} className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-600 hover:to-yellow-700 text-black font-semibold py-3 rounded-xl transition-all duration-300">
+                  <a href={branch.mapUrl} target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-600 hover:to-yellow-700 text-black font-semibold py-3 rounded-xl transition-all duration-300">
                     <Navigation className="w-4 h-4" />Como llegar
-                  </button>
+                  </a>
                   <a href={`tel:${branch.phone}`} className="flex items-center justify-center w-12 h-12 bg-white/10 hover:bg-white/20 rounded-xl transition-colors"><Phone className="w-5 h-5 text-white" /></a>
                 </div>
               </div>
-
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-yellow-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
             </div>
           ))}
@@ -119,7 +107,7 @@ export default function Branches() {
 
         <div className="mt-16 text-center">
           <p className="text-white/50 mb-4">¿No sabes que sucursal te queda mas cerca?</p>
-          <a href="https://wa.me/5491112345678" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-amber-500 hover:text-amber-400 transition-colors"><Phone className="w-5 h-5" />Consultanos por WhatsApp</a>
+          <a href="https://wa.me/5493624406228" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-amber-500 hover:text-amber-400 transition-colors"><Phone className="w-5 h-5" />Consultanos por WhatsApp</a>
         </div>
       </div>
     </section>

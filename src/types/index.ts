@@ -38,6 +38,7 @@ export interface Vehicle {
     latitude: number;
     longitude: number;
     image: string;
+    mapUrl?: string;  // <-- AGREGAR ESTA LÍNEA
   }
   
   export interface Seller {
@@ -51,6 +52,31 @@ export interface Vehicle {
     branchId: string;
     specialties: string[];
     active: boolean;
+  }
+  
+  export interface Contact {
+    id: string;
+    name: string;
+    lastName: string;
+    phone: string;
+    email: string;
+    message: string;
+    vehicleId?: string;
+    sellerId?: string;
+    preferredContact: 'phone' | 'email' | 'whatsapp';
+    status: 'pending' | 'contacted' | 'qualified' | 'closed';
+    createdAt: Date;
+  }
+  
+  export interface Message {
+    id: string;
+    name: string;
+    email: string;
+    phone: string;
+    message: string;
+    vehicleId?: string;
+    read: boolean;
+    createdAt: Date;
   }
   
   export interface FilterOptions {

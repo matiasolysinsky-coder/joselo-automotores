@@ -3,7 +3,6 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Send, Phone, Mail, MapPin, MessageSquare, User, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useApp } from '@/context/AppContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,8 +15,6 @@ export default function Contact() {
   const [formData, setFormData] = useState({ name: '', lastName: '', phone: '', email: '', message: '', preferredContact: 'whatsapp' });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-
-  const { addContact, branches } = useApp();
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -58,19 +55,10 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    try {
-      await addContact({
-        name: formData.name, lastName: formData.lastName, phone: formData.phone,
-        email: formData.email, message: formData.message,
-        preferredContact: formData.preferredContact as 'phone' | 'email' | 'whatsapp',
-      });
+    setTimeout(() => {
       setSubmitted(true);
-      setFormData({ name: '', lastName: '', phone: '', email: '', message: '', preferredContact: 'whatsapp' });
-    } catch (error) {
-      console.error('Error submitting form:', error);
-    } finally {
       setLoading(false);
-    }
+    }, 1500);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -120,7 +108,7 @@ export default function Contact() {
                 <div className="grid sm:grid-cols-2 gap-6 mb-6">
                   <div>
                     <label className="text-white/70 text-sm mb-2 block flex items-center gap-2"><Phone className="w-4 h-4 text-amber-500" />Telefono</label>
-                    <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required className="w-full bg-black/50 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:border-amber-500 focus:outline-none transition-colors" placeholder="+54 11 1234-5678" />
+                    <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required className="w-full bg-black/50 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:border-amber-500 focus:outline-none transition-colors" placeholder="+54 9 3624 406228" />
                   </div>
                   <div>
                     <label className="text-white/70 text-sm mb-2 block flex items-center gap-2"><Mail className="w-4 h-4 text-amber-500" />Email</label>
@@ -165,32 +153,26 @@ export default function Contact() {
             <div className="info-item bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
               <div className="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center mb-4"><Phone className="w-6 h-6 text-amber-500" /></div>
               <h3 className="text-white font-semibold mb-2">Telefono</h3>
-              <a href="tel:+541112345678" className="text-white/70 hover:text-amber-400 transition-colors block mb-1">+54 11 1234-5678</a>
-              <a href="tel:+541187654321" className="text-white/70 hover:text-amber-400 transition-colors">+54 11 8765-4321</a>
+              <a href="tel:+5493624406228" className="text-white/70 hover:text-amber-400 transition-colors block mb-1">+54 9 3624 406228</a>
             </div>
 
             <div className="info-item bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
               <div className="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center mb-4"><MessageSquare className="w-6 h-6 text-green-500" /></div>
               <h3 className="text-white font-semibold mb-2">WhatsApp</h3>
-              <a href="https://wa.me/5491112345678" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-green-400 transition-colors">+54 9 11 1234-5678</a>
+              <a href="https://wa.me/5493624406228" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-green-400 transition-colors">+54 9 3624 406228</a>
             </div>
 
             <div className="info-item bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
               <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-4"><Mail className="w-6 h-6 text-blue-500" /></div>
               <h3 className="text-white font-semibold mb-2">Email</h3>
               <a href="mailto:info@joseloautomotores.com" className="text-white/70 hover:text-blue-400 transition-colors block mb-1">info@joseloautomotores.com</a>
-              <a href="mailto:ventas@joseloautomotores.com" className="text-white/70 hover:text-blue-400 transition-colors">ventas@joseloautomotores.com</a>
             </div>
 
             <div className="info-item bg-gradient-to-br from-amber-500/10 to-yellow-500/10 backdrop-blur-sm rounded-2xl p-6 border border-amber-500/20">
               <div className="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center mb-4"><MapPin className="w-6 h-6 text-amber-500" /></div>
               <h3 className="text-white font-semibold mb-3">Nuestras sucursales</h3>
-              {branches.map((branch) => (
-                <div key={branch.id} className="mb-2 last:mb-0">
-                  <p className="text-white font-medium text-sm">{branch.name}</p>
-                  <p className="text-white/50 text-xs">{branch.address}</p>
-                </div>
-              ))}
+              <div className="mb-2"><p className="text-white font-medium text-sm">Sucursal Centro</p><p className="text-white/50 text-xs">Av. Corrientes 1234, Buenos Aires</p></div>
+              <div><p className="text-white font-medium text-sm">Sucursal Norte</p><p className="text-white/50 text-xs">Av. del Libertador 5678, Vicente Lopez</p></div>
             </div>
           </div>
         </div>
